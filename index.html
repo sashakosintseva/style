@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Навбар -->
+    <nav class="navbar">
+        <a href="glav.html" class="logo">
+            <img src="img/1-no-bg-preview (carve.photos) (1) 1.svg" alt="NDC Logo">
+        </a>
+
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="rasp.html">Расписание</a></li>
+                <li><a href="prep.html">Хореографы</a></li>
+                <li><a href="style.html" style="color: #b90000;">Стили</a></li>
+                <li><a href="contact.html">Контакты</a></li>
+            </ul>
+
+            <a href="tel:+79991234567" class="phone-number">
+                +7 (912) 375-66-71
+            </a>
+        </div>
+    </nav>
+
+    <!-- Главный заголовочный блок -->
+    <section class="styles-hero-section">
+        <div class="styles-hero-container">
+            <h1 class="styles-hero-title">СТИЛИ</h1>
+            <p class="styles-hero-subtitle">Выбери свой стиль и начни танцевать</p>
+        </div>
+    </section>
+
+    <!-- Блок со стилями и описаниями -->
+    <section class="dance-styles-section">
+        <div class="styles-container">
+            <div class="styles-layout">
+                <!-- Левая колонка со стилями -->
+                <div class="styles-column">
+                    <div class="style-item active" data-style="hiphop">
+                        <span class="style-name">HIP-HOP</span>
+                    </div>
+                    <div class="style-item" data-style="afro">
+                        <span class="style-name">AFRO</span>
+                    </div>
+                    <div class="style-item" data-style="vacking">
+                        <span class="style-name">VAACKING</span>
+                    </div>
+                    <div class="style-item" data-style="jazzfunk">
+                        <span class="style-name">JAZZ-FUNK</span>
+                    </div>
+                    <div class="style-item" data-style="locking">
+                        <span class="style-name">LOCKING</span>
+                    </div>
+                    <div class="style-item" data-style="popping">
+                        <span class="style-name">POPPING</span>
+                    </div>
+                    <div class="style-item" data-style="dancehall">
+                        <span class="style-name">DANCEHALL</span>
+                    </div>
+                    <div class="style-item" data-style="house">
+                        <span class="style-name">HOUSE</span>
+                    </div>
+                </div>
+
+                <!-- Правая колонка с описаниями -->
+                <div class="description-column">
+                    <div class="style-description active" id="hiphop-description">
+                        <h3>HIP-HOP</h3>
+                        <p>Уличный танец, родившийся в афроамериканских кварталах Нью-Йорка в 1970-х годах.
+                            Характеризуется свободной пластикой, ритмичными движениями и выражением индивидуальности
+                            через танец.</p>
+                        <a href="hiphop.html" class="detail-button">Подробнее <i class="fas fa-arrow-right"></i></a>
+                    </div>
+
+                    <div class="style-description" id="afro-description">
+                        <h3>AFRO</h3>
+                        <p>Традиционные африканские танцы, сочетающие мощную энергетику, сложные ритмы и выразительные
+                            движения корпусом. Идеально подходит для развития координации и чувства ритма.</p>
+                        <a href="afro.html" class="detail-button">Подробнее <i class="fas fa-arrow-right"></i></a>
+                    </div>
+
+                    <div class="style-description" id="vacking-description">
+                        <h3>VAACKING</h3>
+                        <p>Стиль, возникший в клубах Лос-Анджелеса, характеризующийся быстрыми движениями руками,
+                            подиумной походкой и драматическими позами. Танец самовыражения и уверенности.</p>
+                        <a href="vaaking.html" class="detail-button">Подробнее <i class="fas fa-arrow-right"></i></a>
+                    </div>
+
+                    <div class="style-description" id="jazzfunk-description">
+                        <h3>JAZZ-FUNK</h3>
+                        <p>Современное направление, сочетающее технику джазового танца с энергией хип-хопа.
+                            Характеризуется резкими акцентами, волнами и выразительной хореографией.</p>
+                        <a href="jf.html" class="detail-button">Подробнее <i class="fas fa-arrow-right"></i></a>
+                    </div>
+
+                    <div class="style-description" id="locking-description">
+                        <h3>LOCKING</h3>
+                        <p>Фанковый стиль уличного танца, созданный Доном Кэмпбеллом. Отличается резкими фиксациями в
+                            различных позах, комичными движениями и позитивной энергетикой.</p>
+                        <a href="lockong.html" class="detail-button">Подробнее <i class="fas fa-arrow-right"></i></a>
+                    </div>
+
+                    <div class="style-description" id="popping-description">
+                        <h3>POPPING</h3>
+                        <p>Техника фанкового стиля, основанная на быстром сокращении и расслаблении мышц, создающая
+                            эффект "толчков" в теле. Требует хорошего контроля и изоляции.</p>
+                        <a href="popping.html" class="detail-button">Подробнее <i class="fas fa-arrow-right"></i></a>
+                    </div>
+
+                    <div class="style-description" id="dancehall-description">
+                        <h3>DANCEHALL</h3>
+                        <p>Ямайский уличный танец, отражающий культуру регги и дансхолл музыки. Характеризуется
+                            сексуальными движениями, вибрациями и особой пластикой.</p>
+                        <a href="dh.html" class="detail-button">Подробнее <i class="fas fa-arrow-right"></i></a>
+                    </div>
+
+                    <div class="style-description" id="house-description">
+                        <h3>HOUSE</h3>
+                        <p>Танцевальный стиль, развившийся вместе с хаус-музыкой в чикагских клубах. Отличается сложными
+                            ножными работами, плавными движениями корпусом и чувством грува.</p>
+                        <a href="house.html" class="detail-button">Подробнее <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const styleItems = document.querySelectorAll('.style-item');
+            const styleDescriptions = document.querySelectorAll('.style-description');
+            
+            // Функция для проверки мобильного устройства
+            function isMobileDevice() {
+                return window.innerWidth <= 768;
+            }
+            
+            // Функция для прокрутки к карточке на мобильных устройствах
+            function scrollToCardOnMobile() {
+                if (isMobileDevice()) {
+                    const activeDescription = document.querySelector('.style-description.active');
+                    if (activeDescription) {
+                        // Добавляем небольшую задержку для гарантии, что карточка активна
+                        setTimeout(() => {
+                            activeDescription.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                            
+                            // Визуальная обратная связь
+                            activeDescription.style.boxShadow = '0 0 0 2px rgba(255, 0, 0, 0.3)';
+                            activeDescription.style.transition = 'box-shadow 0.5s ease';
+                            
+                            setTimeout(() => {
+                                activeDescription.style.boxShadow = 'none';
+                            }, 800);
+                        }, 100);
+                    }
+                }
+            }
+            
+            // Функция для обновления позиции описания (для десктопа)
+            function updateDescriptionPosition() {
+                if (!isMobileDevice()) {
+                    const activeItem = document.querySelector('.style-item.active');
+                    if (activeItem) {
+                        const itemRect = activeItem.getBoundingClientRect();
+                        const containerRect = document.querySelector('.styles-layout').getBoundingClientRect();
+                        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                        
+                        const itemTop = itemRect.top + scrollTop;
+                        const containerTop = containerRect.top + scrollTop;
+                        
+                        const descriptionColumn = document.querySelector('.description-column');
+                        if (descriptionColumn) {
+                            descriptionColumn.style.top = (itemTop - containerTop) + 'px';
+                        }
+                    }
+                }
+            }
+            
+            // Обработчик клика по стилям
+            styleItems.forEach(item => {
+                item.addEventListener('click', function () {
+                    const style = this.getAttribute('data-style');
+                    
+                    // Убираем активный класс у всех стилей
+                    styleItems.forEach(i => i.classList.remove('active'));
+                    
+                    // Добавляем активный класс текущему стилю
+                    this.classList.add('active');
+                    
+                    // Скрываем все описания
+                    styleDescriptions.forEach(desc => {
+                        desc.classList.remove('active');
+                    });
+                    
+                    // Показываем соответствующее описание
+                    const targetDescription = document.getElementById(`${style}-description`);
+                    if (targetDescription) {
+                        targetDescription.classList.add('active');
+                    }
+                    
+                    // Для мобильных устройств - прокручиваем к карточке
+                    scrollToCardOnMobile();
+                    
+                    // Для десктопа - обновляем позицию описания
+                    updateDescriptionPosition();
+                });
+            });
+            
+            // Обновляем позицию при скролле и ресайзе (только для десктопа)
+            window.addEventListener('scroll', function() {
+                if (!isMobileDevice()) {
+                    updateDescriptionPosition();
+                }
+            });
+            
+            window.addEventListener('resize', function() {
+                // При изменении размера окна
+                if (isMobileDevice()) {
+                    // Для мобильных - убираем фиксированное позиционирование
+                    const descriptionColumn = document.querySelector('.description-column');
+                    if (descriptionColumn) {
+                        descriptionColumn.style.position = 'relative';
+                        descriptionColumn.style.top = 'auto';
+                    }
+                } else {
+                    // Для десктопа - обновляем позицию
+                    updateDescriptionPosition();
+                }
+            });
+            
+            // Анимация появления стилей
+            const itemsObserver = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+            
+            styleItems.forEach(item => {
+                itemsObserver.observe(item);
+            });
+            
+            // Инициализация при загрузке
+            if (isMobileDevice()) {
+                // Добавляем индикатор кликабельности для мобильных
+                styleItems.forEach(item => {
+                    item.style.cursor = 'pointer';
+                });
+                
+                // Убираем фиксированное позиционирование для мобильных
+                const descriptionColumn = document.querySelector('.description-column');
+                if (descriptionColumn) {
+                    descriptionColumn.style.position = 'relative';
+                    descriptionColumn.style.top = 'auto';
+                }
+            } else {
+                // Для десктопа инициализируем позицию
+                setTimeout(updateDescriptionPosition, 100);
+            }
+        });
+        
+        // Бургер-меню
+        const burgerMenu = document.createElement('div');
+        burgerMenu.className = 'burger-menu';
+        burgerMenu.innerHTML = `
+            <span></span>
+            <span></span>
+            <span></span>
+        `;
+        
+        const navContainer = document.querySelector('.nav-container');
+        const navbar = document.querySelector('.navbar');
+        
+        // Вставляем бургер-меню в навбар
+        navbar.appendChild(burgerMenu);
+        
+        burgerMenu.addEventListener('click', function (e) {
+            e.stopPropagation();
+            this.classList.toggle('active');
+            navContainer.classList.toggle('active');
+            
+            // Блокировка прокрутки при открытом меню
+            document.body.style.overflow = navContainer.classList.contains('active') ? 'hidden' : '';
+        });
+        
+        // Закрытие меню при клике на ссылку
+        const navLinks = document.querySelectorAll('.nav-links a, .phone-number');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                burgerMenu.classList.remove('active');
+                navContainer.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+        
+        // Закрытие меню при клике вне его области
+        document.addEventListener('click', function (event) {
+            if (!navContainer.contains(event.target) && !burgerMenu.contains(event.target) && navContainer.classList.contains('active')) {
+                burgerMenu.classList.remove('active');
+                navContainer.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+    </script>
+
+    <!-- Футер -->
+    <footer class="footer-section">
+        <div class="footer-container">
+            <div class="footer-content">
+                <!-- Лого и описание -->
+                <div class="footer-info">
+                    <div class="footer-logo">NEOS DANCE CENTER</div>
+                    <p class="footer-description">
+                        Профессиональная танцевальная студия, где каждый найдет свой стиль и раскроет творческий
+                        потенциал.
+                        Присоединяйтесь к нашей танцевальной семье!
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-vk"></i>
+                        </a>
+                        <a href="https://t.me/LizaBarash" class="social-link" target="_blank">
+                            <i class="fab fa-telegram"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Навигация -->
+                <div class="footer-nav">
+                    <h3>РАЗДЕЛЫ</h3>
+                    <ul class="footer-links">
+                        <li><a href="glav.html">Главная</a></li>
+                        <li><a href="rasp.html">Расписание</a></li>
+                        <li><a href="prep.html">Хореографы</a></li>
+                        <li><a href="contact.html">Контакты</a></li>
+                    </ul>
+                </div>
+
+                <!-- Контакты -->
+                <div class="footer-contacts">
+                    <h3>КОНТАКТЫ</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Чкалова 35/1, ТЦ "Европа-Азия" 3 этаж</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+7 (999) 123-45-67</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Пн-Пт: 9:00 - 22:00<br>Сб-Вс: 10:00 - 20:00</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Нижняя часть футера -->
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    <p>&copy; 2025 NEOS DANCE CENTER. Все права защищены.</p>
+                </div>
+                <div class="footer-center-text">
+                    <span>NEOS DANCE CENTER</span>
+                </div>
+                <div class="footer-developer">
+                    <p>Разработано с <i class="fas fa-heart"></i> для танцоров</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Стрелка для прокрутки наверх -->
+    <div class="scroll-to-top" id="scrollToTop">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <script>
+        // Стрелка для прокрутки наверх
+        const scrollToTopBtn = document.getElementById('scrollToTop');
+        window.addEventListener('scroll', function () {
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.classList.add('show');
+            } else {
+                scrollToTopBtn.classList.remove('show');
+            }
+        });
+        
+        scrollToTopBtn.addEventListener('click', function () {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Анимация появления футера
+        const footerSection = document.querySelector('.footer-section');
+        const footerObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.2 });
+        
+        if (footerSection) {
+            footerObserver.observe(footerSection);
+        }
+    </script>
+</body>
+
+</html>
