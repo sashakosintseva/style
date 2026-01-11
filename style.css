@@ -1,0 +1,909 @@
+@import url('https://fonts.googleapis.com/css2?family=Limelight&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Notable&family=Oswald:wght@200..700&display=swap');
+
+* {
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000000;
+    color: #fff;
+    overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Основной контент должен занимать доступное пространство */
+body > *:not(footer) {
+    flex-shrink: 0;
+}
+
+/* Навбар */
+.navbar {
+    background-color: #000000;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.3s ease;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 900;
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: translateY(-2px) scale(1.02);
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 23px;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+    padding: 10px 5px;
+    letter-spacing: 0.5px;
+}
+
+.nav-links a:hover {
+    color: #b90000;
+}
+
+.phone-number {
+    font-size: 23px;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.phone-number:hover {
+    color: #b80101;
+}
+
+
+/* Главный заголовочный блок */
+.styles-hero-section {
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.styles-hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+}
+
+.styles-hero-container {
+    max-width: 1000px;
+    padding: 0 50px;
+    position: relative;
+    z-index: 2;
+}
+
+.styles-hero-title {
+    font-size: 120px;
+    font-weight: 900;
+    color: #ffffff;
+    text-transform: uppercase;
+    line-height: 1;
+    margin-bottom: 30px;
+    letter-spacing: 5px;
+}
+
+.styles-hero-subtitle {
+    font-size: 30px;
+    font-weight: 400;
+    color: #ff0000;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+/* Блок со стилями */
+.dance-styles-section {
+    padding: 100px 50px;
+    background-color: #000;
+    position: relative;
+    flex-grow: 1; /* Занимает доступное пространство */
+}
+
+.styles-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.styles-layout {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 60px;
+    align-items: start;
+    position: relative;
+    min-height: 500px; /* Минимальная высота для десктопа */
+}
+
+/* Левая колонка со стилями */
+.styles-column {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.style-item {
+    text-align: center;
+    padding: 25px 20px;
+    border: 2px solid #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateX(-30px);
+}
+
+.style-item.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.style-item.active {
+    border-color: #ff0000;
+    background: rgba(255, 0, 0, 0.1);
+}
+
+.style-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: #ff0000;
+    transition: left 0.3s ease;
+    z-index: 1;
+}
+
+.style-item:hover::before {
+    left: 0;
+}
+
+.style-item.active::before {
+    left: 0;
+}
+
+.style-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    z-index: 2;
+    transition: color 0.3s ease;
+}
+
+.style-item:hover .style-name,
+.style-item.active .style-name {
+    color: #fff;
+}
+
+/* Правая колонка с описаниями */
+.description-column {
+    position: sticky;
+    top: 120px;
+    height: fit-content;
+    transition: top 0.3s ease;
+    min-height: 400px; /* Фиксированная высота для десктопа */
+}
+
+.style-description {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+    pointer-events: none;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 400px; /* Гарантированная высота */
+}
+
+.style-description.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
+    position: relative; /* Важно для мобильных */
+}
+
+.style-description h3 {
+    font-size: 3rem;
+    font-weight: 900;
+    color: #ff0000;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    letter-spacing: 2px;
+}
+
+.style-description p {
+    font-size: 1.3rem;
+    line-height: 1.7;
+    color: #ccc;
+    margin-bottom: 35px;
+    max-width: 100%;
+}
+
+/* Стили для кнопки "Подробнее" */
+.detail-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #ff0000;
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    border: 2px solid #ff0000;
+    margin-top: 15px;
+    align-self: flex-end;
+    margin-left: auto;
+}
+
+.detail-button:hover {
+    background: transparent;
+    color: #ff0000;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 0, 0, 0.3);
+}
+
+.detail-button i {
+    transition: transform 0.3s ease;
+}
+
+.detail-button:hover i {
+    transform: translateX(3px);
+}
+
+/* Расположение кнопки в правом нижнем углу */
+.style-description {
+    display: flex;
+    flex-direction: column;
+}
+
+.style-description p {
+    flex-grow: 1;
+}
+
+/* ==================== */
+/* АДАПТИВ ДЛЯ ПЛАНШЕТОВ */
+/* ==================== */
+@media (max-width: 1024px) {
+    .navbar {
+        padding: 15px 30px;
+    }
+    
+    .styles-hero-title {
+        font-size: 80px;
+    }
+    
+    .styles-hero-subtitle {
+        font-size: 24px;
+    }
+    
+    .dance-styles-section {
+        padding: 80px 30px;
+    }
+    
+    .styles-layout {
+        grid-template-columns: 1fr 1.5fr;
+        gap: 40px;
+        align-items: start;
+        min-height: 400px;
+    }
+    
+    /* Фиксируем карточки на уровне со стилями на планшетах */
+    .description-column {
+        position: sticky;
+        top: 140px;
+        height: fit-content;
+        min-height: 350px;
+    }
+    
+    .style-description {
+        position: relative;
+        min-height: 300px;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .style-description h3 {
+        font-size: 2.5rem;
+    }
+    
+    .style-description p {
+        font-size: 1.1rem;
+        flex-grow: 1;
+    }
+    
+    /* Адаптация для мобильных */
+    @media (max-width: 1024px) {
+        .detail-button {
+            padding: 10px 20px;
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+    }
+}
+
+/* ==================== */
+/* АДАПТИВ ДЛЯ ТЕЛЕФОНОВ */
+/* ==================== */
+@media (max-width: 768px) {
+    body {
+        display: block; /* Убираем flex для мобильных */
+    }
+    
+    /* Навбар и бургер-меню */
+    .navbar {
+        padding: 15px 20px;
+        flex-wrap: wrap;
+    }
+    
+    .nav-container {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        height: 100vh;
+        background-color: #000;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding-top: 100px;
+        transition: right 0.3s ease;
+        z-index: 1000;
+        display: flex !important;
+    }
+    
+    .nav-container.active {
+        right: 0;
+    }
+    
+    .nav-links {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+        width: 100%;
+    }
+    
+    .nav-links a {
+        font-size: 20px;
+        display: block;
+        padding: 15px;
+        border: 1px solid #333;
+        border-radius: 5px;
+    }
+    
+    .phone-number {
+        font-size: 18px;
+        justify-content: center;
+        margin-top: 30px;
+    }
+    
+    /* Бургер-меню как в примере */
+    .burger-menu {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        z-index: 1001;
+        gap: 4px;
+    }
+    
+    .burger-menu span {
+        width: 30px;
+        height: 3px;
+        background-color: #fff;
+        transition: 0.3s;
+    }
+    
+    .burger-menu.active span:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    
+    .burger-menu.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .burger-menu.active span:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+    
+    /* Главный заголовок */
+    .styles-hero-section {
+        height: 50vh;
+    }
+    
+    .styles-hero-container {
+        padding: 0 20px;
+    }
+    
+    .styles-hero-title {
+        font-size: 50px;
+        letter-spacing: 3px;
+    }
+    
+    .styles-hero-subtitle {
+        font-size: 18px;
+        letter-spacing: 2px;
+    }
+    
+    /* Блок со стилями - ИСПРАВЛЕННАЯ ПРОБЛЕМА С НАЛОЖЕНИЕМ */
+    .dance-styles-section {
+        padding: 60px 20px 80px 20px; /* Добавлен отступ снизу */
+        min-height: auto;
+    }
+    
+    .styles-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        display: grid;
+        min-height: auto; /* Убираем фиксированную высоту */
+        position: relative; /* Для корректного позиционирования */
+    }
+    
+    /* Стили слева в колонку */
+    .styles-column {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        order: 1;
+    }
+    
+    .style-item {
+        padding: 20px 15px;
+        min-width: auto;
+        cursor: pointer;
+    }
+    
+    .style-name {
+        font-size: 1.1rem;
+    }
+    
+    /* Карточки описаний - ИСПРАВЛЕНИЕ НАЛОЖЕНИЯ */
+    .description-column {
+        position: relative !important; /* Важно! */
+        top: auto !important;
+        order: 2;
+        min-height: auto; /* Убираем фиксированную высоту */
+        height: auto; /* Автоматическая высота */
+    }
+    
+    .style-description {
+        position: relative !important; /* Самый важный исправление */
+        top: auto !important;
+        left: auto !important;
+        width: 100%;
+        padding: 25px;
+        margin-bottom: 20px; /* Отступ между карточками */
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.5s ease;
+        pointer-events: none;
+        min-height: auto; /* Убираем фиксированную высоту */
+        height: auto; /* Автоматическая высота */
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+    }
+    
+    .style-description.active {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: all;
+        position: relative !important; /* Очень важно */
+        display: block; /* Показываем активную карточку */
+    }
+    
+    /* Скрываем неактивные карточки на мобильных */
+    .style-description:not(.active) {
+        display: none !important;
+    }
+    
+    .style-description h3 {
+        font-size: 2rem;
+    }
+    
+    .style-description p {
+        font-size: 1rem;
+        margin-bottom: 20px;
+        flex-grow: 1;
+    }
+    
+    .detail-button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+        margin-top: 10px;
+        align-self: flex-start;
+    }
+    
+    /* Адаптация для мобильных */
+    @media (max-width: 768px) {
+        .detail-button {
+            padding: 10px 20px;
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+    }
+}
+
+/* ==================== */
+/* АДАПТИВ ДЛЯ МАЛЕНЬКИХ ТЕЛЕФОНОВ */
+/* ==================== */
+@media (max-width: 480px) {
+    .navbar {
+        padding: 12px 15px;
+    }
+    
+    .styles-hero-title {
+        font-size: 40px;
+    }
+    
+    .styles-hero-subtitle {
+        font-size: 16px;
+    }
+    
+    .dance-styles-section {
+        padding: 40px 15px 60px 15px; /* Увеличен отступ снизу */
+    }
+    
+    .style-item {
+        padding: 15px 10px;
+    }
+    
+    .style-name {
+        font-size: 1rem;
+    }
+    
+    .style-description {
+        padding: 20px 15px;
+        min-height: auto;
+    }
+    
+    .style-description h3 {
+        font-size: 1.8rem;
+    }
+    
+    .style-description p {
+        font-size: 0.9rem;
+    }
+    
+    .detail-button {
+        padding: 8px 16px;
+        font-size: 0.8rem;
+        gap: 8px;
+    }
+}
+
+/* Стили футера - ИСПРАВЛЕНИЯ */
+.footer-section {
+    background-color: #000;
+    padding: 80px 0 0 0;
+    width: 100%;
+    position: relative;
+    z-index: 1; /* Футер над контентом */
+}
+
+.footer-container {
+    max-width: 100%;
+    margin: 0;
+    padding: 0 50px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.5fr;
+    gap: 60px;
+    margin-bottom: 60px;
+}
+
+/* Информационный блок */
+.footer-info {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.footer-logo {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.footer-description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #ccc;
+    max-width: 400px;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-link {
+    width: 45px;
+    height: 45px;
+    background: #333;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.social-link:hover {
+    background: #ff0000;
+    transform: translateY(-3px);
+}
+
+.social-link i {
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+/* Навигация и контакты */
+.footer-nav h3,
+.footer-contacts h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+}
+
+.footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-links li a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.footer-links li a:hover {
+    color: #ff0000;
+    transform: translateX(5px);
+}
+
+/* Контакты */
+.footer-contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.contact-item i {
+    color: #ff0000;
+    font-size: 1.1rem;
+    margin-top: 2px;
+    min-width: 20px;
+}
+
+.contact-item span {
+    color: #ccc;
+    font-size: 1.1rem;
+    line-height: 1.4;
+}
+
+/* Нижняя часть футера */
+.footer-bottom {
+    border-top: 1px solid #333;
+    padding: 30px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-copyright p,
+.footer-developer p {
+    color: #ccc;
+    font-size: 1rem;
+    margin: 0;
+}
+
+.footer-center-text {
+    text-align: center;
+}
+
+.footer-center-text span {
+    font-size: 2rem;
+    font-weight: 900;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 4px rgba(255, 0, 0, 0.3);
+}
+
+.footer-developer i {
+    color: #ff0000;
+    margin: 0 5px;
+}
+
+/* Анимация появления */
+.footer-section {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease;
+}
+
+.footer-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Адаптив футера для планшетов */
+@media (max-width: 1024px) {
+    .footer-container {
+        padding: 0 30px;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+}
+
+/* Адаптив футера для телефонов */
+@media (max-width: 768px) {
+    .footer-section {
+        padding: 60px 0 0 0;
+        margin-top: 0; /* Убираем отступ */
+    }
+    
+    .footer-container {
+        padding: 0 20px;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .footer-logo {
+        font-size: 2rem;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+    
+    .footer-center-text span {
+        font-size: 1.5rem;
+    }
+}
+
+/* Адаптив футера для маленьких телефонов */
+@media (max-width: 480px) {
+    .footer-container {
+        padding: 0 15px;
+    }
+    
+    .footer-logo {
+        font-size: 1.8rem;
+    }
+}
+
+/* Стрелка для прокрутки наверх */
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: #ff0000;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.scroll-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-to-top:hover {
+    background-color: #cc0000;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 0, 0, 0.3);
+}
+
+.scroll-to-top i {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .scroll-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+    }
+}
